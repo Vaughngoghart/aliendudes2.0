@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alien Dudes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2e2535;
+      color: #fff;
+    }
+
+    #wrapper {
+      display: flex;
+      height: 100vh;
+    }
+
+    #sidebar {
+      width: 320px;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #1e1e2f;
+      border-right: 2px solid #222;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .thumb-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .thumb-grid img {
+      width: 60px;
+      height: 60px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .thumb-grid img:hover {
+      border-color: #00ffcc;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .buttons button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #111;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .buttons button:hover {
+      background-color: #00bfa6;
+    }
+
+    #preview {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #alien {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    #alien img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      #wrapper {
+        flex-direction: column;
+      }
+
+      #sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #222;
+      }
+
+      #preview {
+        padding: 20px;
+      }
+
+      #alien {
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 1 / 1;
+        position: relative;
+      }
+
+      #alien img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="sidebar">
+      <h1>Alien Dudes</h1>
+
+      <div class="section">
+        <h3>Background</h3>
+        <div id="bg-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Base Skin</h3>
+        <div id="skin-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Clothing</h3>
+        <div id="clothing-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Eyes</h3>
+        <div id="eye-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Head</h3>
+        <div id="head-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Headspots</h3>
+        <div id="headspots-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Eyewear</h3>
+        <div id="eyewear-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Headwear</h3>
+        <div id="headwear-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Mouth</h3>
+        <div id="mouth-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="section">
+        <h3>Holding</h3>
+        <div id="holding-thumbnails" class="thumb-grid"></div>
+      </div>
+
+      <div class="buttons">
+        <button onclick="randomizeAlien()">🎲 Randomize</button>
+        <button onclick="downloadAlien()">⬇️ Download</button>
+      </div>
+    </div>
+
+    <div id="preview">
+      <div id="alien">
+        <img id="layer-1" />
+        <img id="layer-2" />
+        <img id="layer-3" />
+        <img id="layer-4" />
+        <img id="layer-5" />
+        <img id="layer-6" />
+        <img id="layer-7" />
+        <img id="layer-8" />
+        <img id="layer-9" />
+        <img id="layer-10" />
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
